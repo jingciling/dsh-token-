@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Token Budget",
+    "description": "Tracks the tokens consumed today, warns at a configurable share of a daily cap, and asks whether to keep running once the cap is reached."
+  }
+}

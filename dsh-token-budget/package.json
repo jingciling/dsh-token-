@@ -1,0 +1,52 @@
+{
+  "name": "@local/dsh-token-budget",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Daily token budget guard for DeepSeek Harness: counts tokens, warns at a threshold, and asks whether to keep running when the budget is used up.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "token",
+    "budget",
+    "quota",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jingciling/dsh-token-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jingciling/dsh-token-/issues"
+  },
+  "homepage": "https://github.com/jingciling/dsh-token-#readme",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/gate.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}

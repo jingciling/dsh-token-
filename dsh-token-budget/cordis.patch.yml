@@ -1,0 +1,16 @@
+# Bundle patch: 插入 token 预算的 Host 插件。
+# 它的 Client 模块由同一个包通过 `dsh.client` 字段提供，不需要单独一行。
+#
+# `config:` 下每一项都是可选的，下面写的就是默认值：
+#   dailyLimit    - 每日 token 上限（输入 + 输出）
+#   warnRatio     - 达到上限的这个比例时弹出提醒（0.8 = 80%）
+#   graceMinutes  - 用户选择「继续运行」后放行的分钟数（0 = 每次都问）
+#   hardStopRatio - 超过上限的这个倍数后直接拒绝工具调用（不再询问）
+- insert:
+    - id: dsh-token-budget
+      name: '@local/dsh-token-budget'
+      config:
+        dailyLimit: 2000000
+        warnRatio: 0.8
+        graceMinutes: 10
+        hardStopRatio: 1.25
